@@ -1,52 +1,10 @@
-<div class="recipes">
+<ng-template #loading>
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</ng-template>
 
-  <div class="recipes__item">
-    <div class="scard">
-        <h4 class="scard__heading">receipt 1</h4>
-        <p class="scard__description">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        </p>
-        <div class="scard__cta">Learn more</div>
-    </div>
-  </div>
-
-  <div class="recipes__item">
-    <div class="scard">
-        <h4 class="scard__heading">receipt 1</h4>
-        <p class="scard__description">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        </p>
-        <div class="scard__cta">Learn more</div>
-    </div>
-  </div>
-
-  <div class="recipes__item">
-    <div class="scard">
-        <h4 class="scard__heading">receipt 1</h4>
-        <p class="scard__description">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        </p>
-        <div class="scard__cta">Learn more</div>
-    </div>
-  </div>
-
-  <div class="recipes__item">
-    <div class="scard">
-        <h4 class="scard__heading">receipt 1</h4>
-        <p class="scard__description">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        </p>
-        <div class="scard__cta">Learn more</div>
-    </div>
-  </div>
-
-  <div class="recipes__item">
-    <div class="scard">
-        <h4 class="scard__heading">receipt 1</h4>
-        <p class="scard__description">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        </p>
-        <div class="scard__cta">Learn more</div>
-    </div>
-  </div>
+<h1 class="title">Categories</h1>
+<div class="recipes" *ngIf="allCategories$ | async as items  else loading">  
+  @for (item of items.categories; track item.idCategory) {
+   <app-recipe [item]="item" class="recipes__item"></app-recipe>
+  }
 </div>
