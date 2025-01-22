@@ -1,0 +1,11 @@
+@import './../../../assets/_colors.scss';
+
+.header {
+    padding: 15px ;
+    background-color: $primary-color;
+    .line-up{
+        display: flex;
+        align-items: center;
+        color: #fff;       
+    }
+}
